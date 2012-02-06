@@ -1,0 +1,249 @@
+/*
+ * To change the color scheme of slider change each 
+ * background property for each of the five styles below
+ */
+
+/*next button*/
+.bx-next {
+	position:relative;
+	top:40%;
+	right:-200px;
+	z-index:999;
+	width: 30px;
+	height: 30px;
+	text-indent: -999999px;
+	background: url("images/bxslider/gray_next.png") no-repeat 0 -30px;
+}
+
+/*previous button*/
+.bx-prev {
+	position:relative;
+	top:40%;
+	left:130px;
+	z-index:999;
+	width: 30px;
+	height: 30px;
+	text-indent: -999999px;
+	background: url('images/bxslider/gray_prev.png') no-repeat 0 -30px;
+}
+/*.bx-prev {
+	position: absolute;
+	top: 78px;
+	left: -55px;
+	width: 31px;
+	height: 31px;
+	text-indent: -999999px;
+	background: url(images/bxslider/icon_arrow_left.png) no-repeat 0 -31px;
+}
+.bx-next {
+	position: absolute;
+	top: 78px;
+	right: -40px;
+	width: 31px;
+	height: 31px;
+	text-indent: -999999px;
+	background: url(images/bxslider/icon_arrow_right.png) no-repeat 0 -31px;
+}*/
+/*pager links*/
+.bx-pager a {
+	margin-right: 5px;
+	color: #fff;
+	padding: 3px 8px 3px 6px;
+	font-size: 12px;
+	zoom:1;
+	background: url(images/bxslider/orange_pager.png) no-repeat 0 0px;
+}
+/*auto start button*/
+.bx-auto .start {
+	background: url(images/bxslider/gray_auto.png) no-repeat 0 2px;
+	padding-left: 13px;
+}
+/*auto stop button*/
+.bx-auto .stop {
+	background: url(images/bxslider/gray_auto.png) no-repeat 0 -14px;
+	padding-left: 13px;
+}
+/*
+ * End color scheme styles
+ */
+/*next/prev button hover state*/
+.bx-next:hover,
+.bx-prev:hover {
+	background-position: 0 0;
+}
+/*pager links hover and active states*/
+.bx-pager .pager-active,
+.bx-pager a:hover {
+	background-position: 0 0;
+}
+
+/*pager wrapper*/
+.bx-pager {
+	text-align:center;
+	padding-top: 7px;
+	font-size:12px;
+	color:#666;
+}
+/*captions*/
+.bx-captions {
+	text-align:center;
+	font-size: 12px;
+	padding: 7px 0;
+	color: #666;
+}
+/*auto controls*/
+.bx-auto {
+	text-align: left;
+	padding-top: 5px;
+}
+.bx-auto a {
+	color: #666;
+	font-size: 12px;
+}
+/*     Left side block slider      */
+#slider1 {
+    height: 100%;
+    overflow: hidden;
+    zoom:1;
+    text-align: center;
+}
+#slider1 li {
+    list-style: none outside none;
+    width: 100%;  /*     make the size of your block         */
+    height: 310px;
+    text-align: center;    /*     make the images center in your block         */
+}
+#slider1 li img {
+    margin-bottom: 10px;   /*     distance between heading font and text        */
+}
+/*    heading font     */
+#slider1 .bxcontent h4 {
+    color: red;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    position:relative;       /*     make the text center in your block         */
+}
+/*    content font     */
+#slider1 .bxcontent p {
+    color: #000000;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    position:relative;       /*     make the text center in your block         */
+}
+/*    content a     */
+#slider1 .bxcontent a {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: center;
+}
+/*     right side block slider     */
+#slider2 {
+    height: 325px;
+    overflow: hidden;
+    zoom:1;
+}
+#slider2 li {
+    list-style: none outside none;
+    width: 100%;  /*     make the size of your block         */
+    height: 310px;
+    padding-left: 0px;    /*     make the images center in your block         */
+}
+
+#slider2 li img {
+    float: left;
+    margin-bottom: 15px;   /*     distance between heading font and text        */
+}
+/*    heading font     */
+#slider2 .bx2content h4 {
+    color: red;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    padding-left: -15px;
+    line-height: 18px;
+}
+#slider2 .bx2content h5 {
+    color: #a80b2d;
+    font-size: 15px;
+
+    font-weight: normal;
+    font-style: italic;
+    text-align: center;
+    padding-left: -15px;
+    line-height: 18px;
+}
+/*    content font     */
+#slider2 .bx2content p {
+    color: #000000;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+}
+#slider2 .bx2content a {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: center;
+    position:relative;       /*     make the text center in your block         */
+    left: -5px;       /*     make the text center in your block         */
+}
+/*    center block slider     */
+#slider3 {
+    width: 100%;
+    height: 221px;
+    overflow: hidden;
+    zoom:1;
+}
+#slider3 li {
+    list-style: none outside none;
+    width: 100%;  /*     make the size of your block         */
+    height: 250px;
+    padding-left: 0px;    /*     make the images center in your block         */
+    overflow: hidden;
+}
+#slider3 li img {
+width:40%;
+    max-width:200px;
+    max-height:200px;
+    float: left;
+    margin-bottom: 15px;   /*     distance between heading font and text        */
+}
+#slider3 .bx3content {
+    float: left;
+    padding-left: 15px;
+    padding-right: 5px;
+    width: 50%;
+    font-size: 12px;
+    position: relative;
+    line-height: 14px;
+    overflow: hidden;
+    zoom:1;
+}
+/*    heading font     */
+#slider3 .bx3content h4 {
+    float: left;
+    color: red;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    padding-left: -15px;
+}
+/*    content font     */
+#slider3 .bx3content p {
+    color: #000000;
+    font-size: 12px;
+    line-height: 16px;
+}
+#date{
+  color: gray; font-size: 85%;
+  font-weight: normal;
+}

@@ -1,0 +1,20 @@
+﻿version 1.2
+===========
+- Added S3slider
+- Added bxSlider
+
+version 1.1
+===========
+- added new options to the blocks
+- Updated language constants
+- fixed a variety of small Bugs in the templates and styles
+
+version 1.1 beta
+===========
+- Added News featured Content slider Using jQuery
+- Updated language constants
+- fixed a variety of small Bugs
+
+version 1.0
+===========
+first release of the Module
