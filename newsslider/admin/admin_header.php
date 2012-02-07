@@ -11,13 +11,6 @@ include("../../../mainfile.php");
 include '../../../include/cp_header.php';
 global $xoopsModule,$xoopsConfig;
 
-if (file_exists(XOOPS_ROOT_PATH . '/modules/newsslider/language/' . $xoopsConfig['language'] . '/main.php')) {
-  include_once XOOPS_ROOT_PATH . '/modules/newsslider/language/' . $xoopsConfig['language'] . '/main.php';
-} else {
-  include_once XOOPS_ROOT_PATH . '/modules/newsslider/language/english/main.php';
-}
-	
-
 include_once XOOPS_ROOT_PATH."/modules/".$xoopsModule->dirname()."/admin/functions.php";
 
 $myts =& MyTextSanitizer::getInstance();

@@ -8,11 +8,11 @@
  * Licence: GNU
  */
 
-define("_NWS_NAME","Newsslider");
-define("_NWS_DESC","Newsslider für Artikel");
+define("_MI_NWS_NAME","Newsslider");
+define("_MI_NWS_DESC","Newsslider für Artikel");
 
 // Names of admin menu items
-define("_NWS_MENU","Newsslider Ändern/hinzufügen");
+define("_MI_NWS_MENU","Newsslider Ändern/hinzufügen");
 define("_MI_NWS_TAGS", "Newsslider");
 define('_MI_NWS_UPDATEMODULE', 'Modul Templates und Blöcke aktualisieren');
 

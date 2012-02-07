@@ -13,10 +13,10 @@ $modid =& $module_handler->get($xoopsModule->getVar("mid"));
 
 $i = 0;
 if (strstr(XOOPS_VERSION, "XOOPS 2.0")){
-  $adminmenu[$i]['title'] = _NWS_MENU;
+  $adminmenu[$i]['title'] = _MI_NWS_MENU;
   $adminmenu[$i]['link'] = "admin/myblocksadmin.php";
 } else {
-  $adminmenu[$i]['title'] = _NWS_MENU;// uncomment if necessary, this can cause errors
+  $adminmenu[$i]['title'] = _MI_NWS_MENU;// uncomment if necessary, this can cause errors
   $adminmenu[$i]['link'] = '../../modules/system/admin.php?fct=blocksadmin&op=list&filter=1&selgen=' . $xoopsModule->getVar('mid') . '&selmod=-2&selgrp=-1&selvis=-1';
   //$adminmenu[$i]['link'] = '../../modules/system/admin.php?fct=blocksadmin&op=list';
 }

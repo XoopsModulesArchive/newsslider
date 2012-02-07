@@ -21,8 +21,7 @@ define("_MB_NWS_READMORE","Read more...");
 define("_MB_NWS_NAME", "Title");
 define("_MB_NWS_DATE", "Date");
 define("_MB_NWS_HITS", "Hits");
-//define("_MB_NWS_TOPICS", "News Topics<div style=\" font-size: smaller; align='left'\">Set here the allowed Topics.</div>");
-define("_MB_NWS_TOPICS", "News Themen <div style=\" font-size: smaller; align='left'\">Hier können die Themen gesetzt werden.</div>");
+define("_MB_NWS_TOPICS", "News Topics<div style=\" font-size: smaller; align='left'\">Set here the allowed Topics.</div>");
 //scrolling news
 define("_MB_NWS_BSPEED", "Marquee-Speed (larger is faster)<div style='font-weight:normal'>corresponds to delay in pausescroller</div>");
 define("_MB_NWS_BLIMIT", "Limit block to xx entries: ");

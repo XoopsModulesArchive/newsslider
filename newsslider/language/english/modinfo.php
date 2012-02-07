@@ -7,11 +7,11 @@
  * Author: Yerres
  * Licence: GNU
  */
-define("_NWS_NAME","Newsslider");
-define("_NWS_DESC","Inserts a sliding News block");
+define("_MI_NWS_NAME","Newsslider");
+define("_MI_NWS_DESC","Inserts a sliding News block");
 
 // Names of admin menu items
-define("_NWS_MENU","Add/Edit Newsslider");
+define("_MI_NWS_MENU","Add/Edit Newsslider");
 define("_MI_NWS_TAGS", "Newsslider");
 define('_MI_NWS_UPDATEMODULE', 'Update module templates and blocks');
 

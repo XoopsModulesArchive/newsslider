@@ -26,9 +26,9 @@
 //  ------------------------------------------------------------------------ //
 if( ! defined( 'XOOPS_ROOT_PATH' ) ) die( 'XOOPS root path not defined' ) ;
 
-$modversion['name'] = _NWS_NAME;
+$modversion['name'] = _MI_NWS_NAME;
 $modversion['version'] = 1.2;
-$modversion['description'] = _NWS_DESC;
+$modversion['description'] = _MI_NWS_DESC;
 $modversion['author'] = "Yerres";
 $modversion['help'] = "readme.txt";
 $modversion['official'] = 0;
@@ -39,7 +39,7 @@ $modversion['license'] = "GPL see LICENSE";
 
 $modversion["license_file"] = XOOPS_URL."/modules/newsslider/gpl.txt";
 $modversion["release"] = "2012-01-30";
-$modversion["module_status"] = "1.2";
+$modversion["module_status"] = "beta";
 
 // Sql
 // Admin things

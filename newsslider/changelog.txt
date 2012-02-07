@@ -1,4 +1,4 @@
-﻿version 1.2
+﻿version 1.2 beta rev II
 ===========
 - Added S3slider
 - Added bxSlider

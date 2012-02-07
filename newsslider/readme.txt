@@ -24,9 +24,9 @@ Five thumbnail Images, named from image1-small.jpg to image5-small.jpg, have the
 .S3Slider
 Images are located in the directory modules/newsslider/images/s3.
 Five featured Images, named from image1.jpg to image5.jpg, have following dimensions: 410 x 300px.
-.bxSlider
+.bxSlider (beta!)
 Images are named in the same manner and are located in the same directory as for Featured Content Slider. They can be of any size.
-(edit:height-Attibut gelöscht wegen Inkompabilität)
+(edit:modified template because of incompability)
 
 
 Credits and Thanks
@@ -37,8 +37,7 @@ Featured Content Slider : Web Developer Plus : http://webdeveloperplus.com/jquer
 S3Slider : http://www.serie3.info/s3slider/
 jQuery bxSlider v3.0 : http://bxslider.com/
 News Module : Herve http://xoops.org/
-Maitsco : http://www.maitsco.com/english
-jlmZone : http://www.jlmzone.com/modules/news/
+Free Font Billard : http://www.fontsner.com/font/Billard-3161.html
 
 
 BETA VERSION
