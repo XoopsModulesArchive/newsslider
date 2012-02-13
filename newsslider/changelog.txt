@@ -1,4 +1,13 @@
-﻿version 1.2 beta rev II
+﻿version 1.2 rc 
+===========
+- fixed issue with random news
+- fixed some style and template related issues
+
+version 1.2 beta rev II
+===========
+- fixed a variety of Bugs
+
+version 1.2 beta rev I
 ===========
 - Added S3slider
 - Added bxSlider

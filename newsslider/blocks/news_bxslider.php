@@ -56,10 +56,10 @@ function b_news_bxslider_show( $options ) {
     }
 
     if ($options[22] == 0) {
-        $stories = $tmpstory->getRandomNews($options[0],0,$restricted,0,1, $options[7]);
+        $stories = $tmpstory->getAllPublished($options[0],0,$restricted,0,1, $options[7]);
     } else {
         $topics = array_slice($options, 22);
-        $stories = $tmpstory->getRandomNews($options[0],0,$restricted,$topics, 1, $options[7]);
+        $stories = $tmpstory->getAllPublished($options[0],0,$restricted,0,1, $options[7]);
     }
     unset($tmpstory);
       if(count($stories)==0)  return '';
@@ -113,6 +113,8 @@ function b_news_bxslider_show( $options ) {
         $block['stories'][] = $news;
     }
     $block['lang_read_more']= _MB_NWS_READMORE;
+    global $xoTheme; 
+    $xoTheme -> addStylesheet( 'modules/newsslider/bx_styles.css' );    
     return $block;
 }
 

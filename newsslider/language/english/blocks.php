@@ -74,4 +74,7 @@ define("_MB_NWS_TEXTALIGN", "Textaligment");
 define("_MB_NWS_JUSTIFY", "Justify");
 define("_MB_NWS_TOPICT", "Show Topics?");
 define("_MB_NWS_CAPTIONS", "Show image captions?");
+// RC
+define("_MB_NWS_JQUERY", "Load jQuery ?<div style=\" font-size: smaller; align='left'\">If jQuery is already being loaded in the theme, you can disable it here.</div>");
+define("_MB_NWS_STRIPTAGS", "Clear HTML tags ?<div style=\" font-size: smaller; align='left'\">Check here whether HTML-tags shall be cleared out of the text.</div>");
 ?>

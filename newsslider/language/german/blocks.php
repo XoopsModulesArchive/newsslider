@@ -74,4 +74,6 @@ define("_MB_NWS_TEXTALIGN", "Textausrichtung");
 define("_MB_NWS_JUSTIFY", "Blocksatz");
 define("_MB_NWS_TOPICT", "Themen anzeigen?");
 define("_MB_NWS_CAPTIONS", "Bild Untertitel anzeigen?");
+// RC
+define("_MB_NWS_JQUERY", "jQuery im Block Laden?<div style=\" font-size: smaller; align='left'\">Falls jQuery bereits im Theme geladen wird, braucht es nicht im Block geladen zu werden.</div>");
 ?>

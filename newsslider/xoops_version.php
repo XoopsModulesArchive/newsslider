@@ -38,8 +38,8 @@ $modversion['dirname'] = "newsslider";
 $modversion['license'] = "GPL see LICENSE";
 
 $modversion["license_file"] = XOOPS_URL."/modules/newsslider/gpl.txt";
-$modversion["release"] = "2012-01-30";
-$modversion["module_status"] = "beta";
+$modversion["release"] = "2012-02-13";
+$modversion["module_status"] = "RC";
 
 // Sql
 // Admin things

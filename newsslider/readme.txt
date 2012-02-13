@@ -26,7 +26,6 @@ Images are located in the directory modules/newsslider/images/s3.
 Five featured Images, named from image1.jpg to image5.jpg, have following dimensions: 410 x 300px.
 .bxSlider (beta!)
 Images are named in the same manner and are located in the same directory as for Featured Content Slider. They can be of any size.
-(edit:modified template because of incompability)
 
 
 Credits and Thanks
@@ -36,7 +35,9 @@ Pausescroller, DHTML Ticker script and Featured Content Glider : http://DynamicD
 Featured Content Slider : Web Developer Plus : http://webdeveloperplus.com/jquery/featured-content-slider-using-jquery-ui/
 S3Slider : http://www.serie3.info/s3slider/
 jQuery bxSlider v3.0 : http://bxslider.com/
-News Module : Hervet http://xoops.org/
+News Module : Herve http://xoops.org/
+Maitsco : http://www.maitsco.com/english
+jlmZone : http://www.jlmzone.com/modules/news/
 
 
 BETA VERSION

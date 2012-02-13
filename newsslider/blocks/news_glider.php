@@ -56,10 +56,10 @@ function b_news_glider_show( $options ) {
     }
 
     if ($options[23] == 0) {
-        $stories = $tmpstory->getRandomNews($options[0],0,$restricted,0,1, $options[13]);
+        $stories = $tmpstory->getAllPublished($options[0],0,$restricted,0,1, $options[13]);
     } else {
         $topics = array_slice($options, 23);
-        $stories = $tmpstory->getRandomNews($options[0],0,$restricted,$topics, 1, $options[13]);
+        $stories = $tmpstory->getAllPublished($options[0],0,$restricted,0,1, $options[13]);
     }
     unset($tmpstory);
       if(count($stories)==0)  return '';

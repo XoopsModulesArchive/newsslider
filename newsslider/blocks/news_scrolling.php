@@ -10,7 +10,6 @@
 */
 if( ! defined( 'XOOPS_ROOT_PATH' ) ) die( 'XOOPS root path not defined' ) ;
 
-
 function b_scrolling_news_show( $options ) {
     global $xoopsDB, $xoopsUser;
     $myts = & MyTextSanitizer :: getInstance();
@@ -50,10 +49,10 @@ function b_scrolling_news_show( $options ) {
     }
 
     if ($options[16] == 0) {
-        $stories = $tmpstory->getRandomNews($options[0],0,$restricted,0,1, $options[7]);
+        $stories = $tmpstory->getAllPublished($options[0],0,$restricted,0,1, $options[7]);
     } else {
         $topics = array_slice($options, 16);
-        $stories = $tmpstory->getRandomNews($options[0],0,$restricted,$topics, 1, $options[7]);
+        $stories = $tmpstory->getAllPublished($options[0],0,$restricted,0,1, $options[7]);
     }
     unset($tmpstory);
     if(count($stories)==0)  return '';
@@ -77,15 +76,17 @@ function b_scrolling_news_show( $options ) {
         if ($options[10] > 0) {
           $html = $story->nohtml() == 1 ? 0 : 1;
           //$html = $options[11] == 1 ? 0 : 1;
+          $clearhtml = $options[8] == 1 ? 0 : 1;
           $smiley = $options[12] == 1 ? 0 : 1;
           $xcode = $options[13] == 1 ? 0 : 1;
           $image = $options[14] == 1 ? 0 : 1;
           $br = $options[15] == 1 ? 0 : 1;
           //--- for News versions prior to 1.60
-          //$news['teaser'] = xoops_substr($myts->displayTarea(strip_tags($story->hometext)), 0, $options[10]+3);
-          //--- for news version 1.60+
-          $news['teaser'] = news_truncate_tagsafe(strip_tags($myts->displayTarea($story->hometext, $html, $smiley, $xcode, $image, $br ), $options[10]+3));
-
+          if ($module->getVar('version') <= 160) {         
+            $news['teaser'] = xoops_substr($myts->displayTarea(strip_tags($story->hometext)), 0, $options[10]+3);
+          } else {
+            $news['teaser'] = news_truncate_tagsafe(strip_tags($myts->displayTarea($story->hometext, $html, $smiley, $xcode, $image, $br ), $options[10]+3));
+          }
           if($infotips>0) {
             $news['infotips'] = ' title="'.news_make_infotips($story->hometext()).'"';
           } else {
@@ -150,7 +151,6 @@ function b_scrolling_news_edit( $options ){
   //---
   $form .= "<tr><td class='even'>"._MB_NWS_CHARS."</td><td class='odd'><input type='text' name='options[9]' value='".$options[9]."'/></td></tr>";
   $form .= "<tr><td class='even'>"._MB_NWS_TEASER." </td><td class='odd'><input type='text' name='options[10]' value='".$options[10]."' /></td></tr>";
-
 	//---
 	$form .= "<tr><td class='even'>&nbsp; </td> <td class='odd'>&nbsp;</td></tr>";
   //--- 

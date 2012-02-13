@@ -33,6 +33,7 @@
 	height:60px; 
 	color:#333;  background:#fff; 
 	line-height:14px;
+	list-style:none;
 }
 #featured li.ui-tabs-nav-item a:hover{ 
 	background:#f2f2f2; 
