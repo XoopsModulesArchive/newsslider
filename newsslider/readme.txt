@@ -36,8 +36,7 @@ Pausescroller, DHTML Ticker script and Featured Content Glider : http://DynamicD
 Featured Content Slider : Web Developer Plus : http://webdeveloperplus.com/jquery/featured-content-slider-using-jquery-ui/
 S3Slider : http://www.serie3.info/s3slider/
 jQuery bxSlider v3.0 : http://bxslider.com/
-News Module : Herve http://xoops.org/
-Free Font Billard : http://www.fontsner.com/font/Billard-3161.html
+News Module : Hervet http://xoops.org/
 
 
 BETA VERSION
