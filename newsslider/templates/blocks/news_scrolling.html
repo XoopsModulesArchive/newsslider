@@ -1,21 +1,9 @@
-<{if $block.style == '0'}>
-  <marquee onmouseover="this.stop();"
-           onmouseout="this.start();"
-           direction='<{$block.direction}>'
-           style='width:100%;height:160px;' 
-           bgcolor='<{$block.bgcolor}>'
-           scrollamount='5' 
-           scrolldelay='<{$block.speed}>'
-           <{if $block.alternate}>
-            behavior='alternate'
-           <{/if}>
-           >
-
+<{if $block.style == '0'}><marquee onmouseover="this.stop();" onmouseout="this.start();" direction='<{$block.direction}>' style='width:100%;height:160px;'  bgcolor='<{$block.bgcolor}>' scrollamount='<{$block.speed}>' scrolldelay='5' <{if $block.alternate}>behavior='alternate'<{/if}>>
   <{foreach item=news from=$block.stories}>
     <li style="display:outline; margin:5px; padding:0;list-style-type: none;list-style-position: outside;">
-    <{$news.topic_title}> - <a style="cursor:help"  href="<{$xoops_url}>/modules/news/article.php?storyid=<{$news.id}>" <{$news.infotips}>><{$news.title}></a>
+    <{if $block.topic}><{$news.topic_title}> - <{/if}><a style="cursor:help"  href="<{$xoops_url}>/modules/news/article.php?storyid=<{$news.id}>" <{$news.infotips}>><{$news.title}></a>
     <{if $block.includedate}>
-      <div style='color: gray; font-size: 85%;'><{$term.date}></div>
+      <div style='color: gray; font-size: 85%;'><{$news.date}></div>
     <{/if}>
       <div><{$news.teaser}></div><br/>
     </li><br>

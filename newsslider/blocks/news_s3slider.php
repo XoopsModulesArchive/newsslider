@@ -12,7 +12,7 @@ if( ! defined( 'XOOPS_ROOT_PATH' ) ) die( 'XOOPS root path not defined' ) ;
 
 
 function b_news_s3slider_show( $options ) {
-    global $xoopsDB, $xoopsUser;
+    global $xoopsDB, $xoopsUser, $xoTheme;
     $myts = & MyTextSanitizer :: getInstance();
 
     $block = array();
@@ -30,6 +30,7 @@ function b_news_s3slider_show( $options ) {
     $block['includedate'] = ($options[2]==1)? 1:0;
     $block['author'] = ($options[3]==1)? 1:0;
     $block['sort'] = $options[4];
+    $block['jquery'] = ($options[8]==1)? 1:0;
    
     $tmpstory = new NewsStory;
     // for compatibility with old News versions
@@ -45,11 +46,11 @@ function b_news_s3slider_show( $options ) {
       $infotips  = '0';
     }
 
-    if ($options[13] == 0) {
-        $stories = $tmpstory->getAllPublished($options[0],0,$restricted,0,1, $options[4]);
+    if ($options[14] == 0) {
+        $stories = $tmpstory->getAllPublished($options[0],0,$restricted,0,1,true, $options[4]);
     } else {
-        $topics = array_slice($options, 13);
-        $stories = $tmpstory->getAllPublished($options[0],0,$restricted,0,1, $options[4]);
+        $topics = array_slice($options, 14);
+        $stories = $tmpstory->getAllPublished($options[0],0,$restricted,0,1,true, $options[4]);
     }
 
     unset($tmpstory);
@@ -73,18 +74,17 @@ function b_news_s3slider_show( $options ) {
         $news['picture'] = 'image'.$i.'.jpg';
  
         if ($options[7] > 0) {
-          $html = $story->nohtml() == 1 ? 0 : 1;
-          //$html = $options[8] == 1 ? 0 : 1;//
-          $smiley = $options[9] == 1 ? 0 : 1;
-          $xcode = $options[10] == 1 ? 0 : 1;
-          $image = $options[11] == 1 ? 0 : 1;
-          $br = $options[12] == 1 ? 0 : 1;
+          //$html = $story->nohtml() == 1 ? 0 : 1;
+          $html = $options[9] == 1 ? 0 : 1;//
+          $smiley = $options[10] == 1 ? 0 : 1;
+          $xcode = $options[11] == 1 ? 0 : 1;
+          $image = $options[12] == 1 ? 0 : 1;
+          $br = $options[13] == 1 ? 0 : 1;
           //--- for News versions prior to 1.60
           if ($module->getVar('version') <= 160) {
             $news['teaser'] = xoops_substr($myts->displayTarea(strip_tags($story->hometext)), 0, $options[7]+3);
           } else {
             //--- for News version 1.60+
-            //$news['teaser'] = news_truncate_tagsafe($myts->displayTarea($story->hometext, $html), $options[7]+3);
             $news['teaser'] = news_truncate_tagsafe(strip_tags($myts->displayTarea($story->hometext, $html, $smiley, $xcode, $image, $br )), $options[7]+3);
           }
           if($infotips>0) {
@@ -103,16 +103,8 @@ function b_news_s3slider_show( $options ) {
         $block['stories'][] = $news;
     }
     $block['lang_read_more']= _MB_NWS_READMORE;
-    global $xoTheme; 
     $xoTheme -> addStylesheet( 'modules/newsslider/s3_style.css' );
-    /*$jquery = ($options[8]==1) ? 1:0;
-    if ( $jquery ) {
-      if (file_exists(XOOPS_ROOT_PATH . '/modules/newsslider/js/jquery.min.js')) {
-      if(isset($xoTheme) && is_object($xoTheme)) {
-        $xoTheme -> addScript('/modules/newsslider/js/jquery.min.js', array( 'type' => 'text/javascript' ) );
-        $xoTheme -> addScript('/modules/newsslider/js/s3Slider.js', array( 'type' => 'text/javascript' ) );
-      }}
-    }*/    
+   
     return $block;
 }
 
@@ -123,7 +115,6 @@ function b_news_s3slider_edit( $options ){
 	$form  = "<table width='100%' border='0'  class='bg2'>";
 	$form .= "<tr><th width='50%'>"._OPTIONS."</th><th width='50%'>"._MB_NWS_SETTINGS."</th></tr>";
 	$form .= "<tr><td class='even'>"._MB_NWS_BLIMIT."</td><td class='odd'><input type='text' name='options[0]' size='16' maxlength=3 value='".$options[0]."' /></td></tr>";
-	//$form .= "<tr><td class='even'>"._MB_NWS_STORIES."</td><td class='odd'><input type='text' name='options[]' value='" . $options[1] . "' size='20'></td></tr>";
 	$form .= "<tr><td class='even'>"._MB_NWS_BPACE."</td><td class='odd'><input type='text' name='options[1]' size='16' maxlength=2 value='".$options[1]."' /></td></tr>";
 	//---
 	$form .= "<tr><td class='even'>"._MB_NWS_SHOWDATE."</td><td class='odd'>";
@@ -135,7 +126,7 @@ function b_news_s3slider_edit( $options ){
 	$form .= "<input type='radio' name='options[3]' value='0'".(($options[3]==0)?" checked='checked'":"")." />"._NO."<br /></td></tr>";
   //---  
 	$form .= "<tr><td class='even'>"._MB_NWS_SORT."</td><td class='odd'><select name='options[4]'>";
-	$form .= "<option value='RAND()' ".(($options[4]=='RAND()')?" selected='selected'":"").">"._MB_NWS_RANDOM."</option>\n";
+	$form .= "<option value='topicid' ".(($options[4]=='topicid')?" selected='selected'":"").">"._MB_NWS_TOPIC."</option>\n";
 	$form .= "<option value='published' ".(($options[4]=='published')?" selected='selected'":"").">"._MB_NWS_DATE."</option>\n";
 	$form .= "<option value='counter' ".(($options[4]=='counter')?" selected='selected'":"").">"._MB_NWS_HITS."</option>\n";
 	$form .= "<option value='title' ".(($options[4]=='title')?" selected='selected'":"").">"._MB_NWS_NAME."</option>\n";
@@ -150,35 +141,39 @@ function b_news_s3slider_edit( $options ){
   //---
   $form .= "<tr><td class='even'>"._MB_NWS_CHARS."</td><td class='odd'><input type='text' name='options[6]' value='".$options[6]."'/></td></tr>";
   $form .= "<tr><td class='even'>"._MB_NWS_TEASER." </td><td class='odd'><input type='text' name='options[7]' value='".$options[7]."' /></td></tr>";
+  //---
+	$form .= "<tr><td class='even'>"._MB_NWS_JQUERY."</td><td class='odd'>";
+	$form .= "<input type='radio' name='options[8]' value='1'".(($options[8]==1)?" checked='checked'":"")." />"._YES."&nbsp;";
+	$form .= "<input type='radio' name='options[8]' value='0'".(($options[8]==0)?" checked='checked'":"")." />"._NO."<br /></td></tr>";
 	//---
 	$form .= "<tr><td class='even'>&nbsp; </td> <td class='odd'>&nbsp;</td></tr>";
   //--- 
 	$form .= "<tr><td class='even'>"._MB_NWS_HTML."</td><td class='odd'>";
-	$form .= "<input type='radio' name='options[8]' value='1'".(($options[8]==1)?" checked='checked'":"")." />"._YES."&nbsp;";
-	$form .= "<input type='radio' name='options[8]' value='0'".(($options[8]==0)?" checked='checked'":"")." />"._NO."<br /></td></tr>";
-  //---  
-	$form .= "<tr><td class='even'>"._MB_NWS_SMILEY."</td><td class='odd'>";
 	$form .= "<input type='radio' name='options[9]' value='1'".(($options[9]==1)?" checked='checked'":"")." />"._YES."&nbsp;";
 	$form .= "<input type='radio' name='options[9]' value='0'".(($options[9]==0)?" checked='checked'":"")." />"._NO."<br /></td></tr>";
   //---  
-	$form .= "<tr><td class='even'>"._MB_NWS_XCODE."</td><td class='odd'>";
+	$form .= "<tr><td class='even'>"._MB_NWS_SMILEY."</td><td class='odd'>";
 	$form .= "<input type='radio' name='options[10]' value='1'".(($options[10]==1)?" checked='checked'":"")." />"._YES."&nbsp;";
 	$form .= "<input type='radio' name='options[10]' value='0'".(($options[10]==0)?" checked='checked'":"")." />"._NO."<br /></td></tr>";
-	//---
-	$form .= "<tr><td class='even'>"._MB_NWS_BR."</td><td class='odd'>";
+  //---  
+	$form .= "<tr><td class='even'>"._MB_NWS_XCODE."</td><td class='odd'>";
 	$form .= "<input type='radio' name='options[11]' value='1'".(($options[11]==1)?" checked='checked'":"")." />"._YES."&nbsp;";
 	$form .= "<input type='radio' name='options[11]' value='0'".(($options[11]==0)?" checked='checked'":"")." />"._NO."<br /></td></tr>";
 	//---
 	$form .= "<tr><td class='even'>"._MB_NWS_IMAGE."</td><td class='odd'>";
 	$form .= "<input type='radio' name='options[12]' value='1'".(($options[12]==1)?" checked='checked'":"")." />"._YES."&nbsp;";
 	$form .= "<input type='radio' name='options[12]' value='0'".(($options[12]==0)?" checked='checked'":"")." />"._NO."<br /></td></tr>";
+	//---
+  $form .= "<tr><td class='even'>"._MB_NWS_BR."</td><td class='odd'>";
+	$form .= "<input type='radio' name='options[13]' value='1'".(($options[13]==1)?" checked='checked'":"")." />"._YES."&nbsp;";
+	$form .= "<input type='radio' name='options[13]' value='0'".(($options[13]==0)?" checked='checked'":"")." />"._NO."<br /></td></tr>";
   //--- get topics
-  $form .= "<tr><td class='even'>"._MB_NWS_TOPICS."</td><td class='odd'><select id=\"options[13]\" name=\"options[]\" multiple=\"multiple\">";
+  $form .= "<tr><td class='even'>"._MB_NWS_TOPICS."</td><td class='odd'><select id=\"options[14]\" name=\"options[]\" multiple=\"multiple\">";
   $module_handler = xoops_gethandler("module");
   $newsModule = $module_handler->getByDirname("news");
   if (is_object($newsModule)) {
-    $isAll = empty($options[13]) ? true : false;
-    $options_tops = array_slice($options, 13);
+    $isAll = empty($options[14]) ? true : false;
+    $options_tops = array_slice($options, 14);
     include_once XOOPS_ROOT_PATH."/class/xoopsstory.php";
     $xt = new XoopsTopic($xoopsDB->prefix("topics"));
     $alltopics = $xt->getTopicsList();

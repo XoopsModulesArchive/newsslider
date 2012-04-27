@@ -15,16 +15,18 @@ define("_MB_NWS_RANDOM", "zufällig");
 define("_MB_NWS_ORDER", "Reihenfolge:");
 define("_MB_NWS_TEMPLATE", "Layout:");
 define("_MB_NWS_DISP","Anzeige Methode");
-define("_MB_NWS_SHOWDATE", "Datum zeigen?");
-define("_MB_NWS_TEASER", "Länge des Anreissers (Teaser) (0 für keinen Teaser) (in Buchstaben)");
+define("_MB_NWS_SHOWDATE", "Datum zeigen ?");
+define("_MB_NWS_SHOWTOPIC", "Themen Titel zeigen ?");
+define("_MB_NWS_TEASER", "Länge des Anreissers in Buchstaben (0 für keinen Teaser)");
 define("_MB_NWS_CHARS","Länge des Titels (in Buchstaben)");
 define("_MB_NWS_READMORE","mehr...");
 define("_MB_NWS_NAME", "Auflisten nach Titel");
 define("_MB_NWS_DATE", "Auflisten nach Datum");
 define("_MB_NWS_HITS", "Auflisten nach Aufrufen");
+define("_MB_NWS_TOPIC", "Auflisten nach Themen");
 define("_MB_NWS_TOPICS", "News Themen <div style=\" font-size: smaller; align='left'\">Hier können die Themen gesetzt werden.</div>");
 //scrolling news
-define("_MB_NWS_BSPEED", "Geschwindigkeit (standard:3)<div style='font-weight:normal'>entspricht Verz&ouml;gerung im Pausescroller</div>");
+define("_MB_NWS_BSPEED", "Geschwindigkeit <div style='font-weight:normal'>entspricht Verz&ouml;gerung im Pausescroller (empfohlen für Marquee: 2, für Scroller: 3)</div>");
 define("_MB_NWS_BLIMIT", "Anzahl News Artikel: ");
 define("_MB_NWS_BACKGROUNDCOLOR", "Hintergrundfarbe:");
 define("_MB_NWS_DIRECTION", "Scroll Richtung ?");
@@ -48,7 +50,7 @@ define("_MB_NWS_FORWARD", "Vorw&auml;rts");
 define("_MB_NWS_PERSISTSTATE", "Letzten Inhalt erinnern?");
 define("_MB_NWS_BBORDER", "Rahmen Stärke:");
 // Featured content Slider
-define("_MB_NWS_SHOWAUTH", "Autor zeigen?");
+define("_MB_NWS_SHOWAUTH", "Autor zeigen ?");
 define("_MB_NWS_HTML", "HTML darstellen ?");
 define("_MB_NWS_SMILEY", "Smileys zeigen ?");
 define("_MB_NWS_XCODE", "Xcode zeigen ?");
@@ -74,6 +76,6 @@ define("_MB_NWS_TEXTALIGN", "Textausrichtung");
 define("_MB_NWS_JUSTIFY", "Blocksatz");
 define("_MB_NWS_TOPICT", "Themen anzeigen?");
 define("_MB_NWS_CAPTIONS", "Bild Untertitel anzeigen?");
-// RC
+//
 define("_MB_NWS_JQUERY", "jQuery im Block Laden?<div style=\" font-size: smaller; align='left'\">Falls jQuery bereits im Theme geladen wird, braucht es nicht im Block geladen zu werden.</div>");
 ?>

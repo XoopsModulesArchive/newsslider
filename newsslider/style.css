@@ -51,7 +51,8 @@
 #featured .ui-tabs-panel .info{ /* news box teaser */
 	position:absolute; 
 	top:180px; left:0; 
-	height:70px; 
+	height:70px;
+	width:400px; /* fixed width */
 	background: url('images/transparent-bg.png'); 
 }
 #featured .info h2{ 

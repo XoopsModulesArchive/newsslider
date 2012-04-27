@@ -14,13 +14,15 @@ define("_MB_NWS_RANDOM", "Random");
 define("_MB_NWS_ORDER", "Default order:");
 define("_MB_NWS_TEMPLATE", "Layout:");
 define("_MB_NWS_DISP","Display Method");
-define("_MB_NWS_SHOWDATE", "Show Date?");
+define("_MB_NWS_SHOWDATE", "Show Date ?");
+define("_MB_NWS_SHOWTOPIC", "Show Topic Title ?");
 define("_MB_NWS_TEASER", "Show Teaser Length (0 for no teaser, i.e. Headline-Ticker-mode) (in chars)");
 define("_MB_NWS_CHARS","Length of the title (in chars)");
 define("_MB_NWS_READMORE","Read more...");
 define("_MB_NWS_NAME", "Title");
 define("_MB_NWS_DATE", "Date");
 define("_MB_NWS_HITS", "Hits");
+define("_MB_NWS_TOPIC", "Topics");
 define("_MB_NWS_TOPICS", "News Topics<div style=\" font-size: smaller; align='left'\">Set here the allowed Topics.</div>");
 //scrolling news
 define("_MB_NWS_BSPEED", "Marquee-Speed (larger is faster)<div style='font-weight:normal'>corresponds to delay in pausescroller</div>");
@@ -74,7 +76,6 @@ define("_MB_NWS_TEXTALIGN", "Textaligment");
 define("_MB_NWS_JUSTIFY", "Justify");
 define("_MB_NWS_TOPICT", "Show Topics?");
 define("_MB_NWS_CAPTIONS", "Show image captions?");
-// RC
+// 
 define("_MB_NWS_JQUERY", "Load jQuery ?<div style=\" font-size: smaller; align='left'\">If jQuery is already being loaded in the theme, you can disable it here.</div>");
-define("_MB_NWS_STRIPTAGS", "Clear HTML tags ?<div style=\" font-size: smaller; align='left'\">Check here whether HTML-tags shall be cleared out of the text.</div>");
 ?>
